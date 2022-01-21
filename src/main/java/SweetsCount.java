@@ -20,17 +20,13 @@ public class SweetsCount {
         Donut donut1 = new Donut("Sweet Donut", 0.2, 5.99, true );
         Pancake pancakes1 = new Pancake("Pancaky", 0.25, 5.99, 15);
         //create the "gift"
-        Sweet[] sweetGift = {candy1, jellybean1, donut1, pancakes1};
+        GiftBox giftBox = new GiftBox(candy1, jellybean1, donut1, pancakes1);
 
         //print gift's information
-        System.out.print("Gift consist of \n");
-        for (Sweet sweet: sweetGift) {
-            System.out.println(sweet.toString() + " ");
-        }
+        System.out.println(giftBox.toString());
 
         //print total information about the gift
-        //it was calculated in a static fields of the class called "Sweet"
-        System.out.printf("\nThe total weight of the gift is %.2f \n", Sweet.getAbsoluteWeight());
-        System.out.printf("The total price of the gift is %.2f", Sweet.getAbsolutePrice());
+        System.out.printf("The total weight of the gift is %.2f \n", giftBox.getWeight());
+        System.out.printf("The total price of the gift is %.2f", giftBox.getPrice());
     }
 }
